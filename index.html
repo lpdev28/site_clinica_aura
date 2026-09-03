@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Clínica Aura — Fisioterapia & Osteopatia</title>
+
+  <meta name="description"
+    content="Clínica Aura: fisioterapia, osteopatia e fortalecimento muscular com atendimento individualizado.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --sage-50: #f4f7f5;
+      --sage-100: #e3ebe6;
+      --sage-200: #c5d8cc;
+      --sage-300: #9ebfaa;
+      --sage-400: #7a9f88;
+      --sage-500: #5c8570;
+      --sage-600: #486a59;
+      --sage-700: #3d5549;
+      --sage-800: #33453c;
+
+      --blush-50: #fdf6f4;
+      --blush-100: #fceee8;
+      --blush-200: #f9ddd3;
+
+      --warm-white: #faf9f7;
+      --cream: #f5f3ef;
+
+      --ink: #2c332e;
+      --ink-light: #5a635d;
+      --ink-muted: #8a948d;
+
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 32px;
+      --radius-full: 999px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--ink);
+      background: var(--warm-white);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    /* HEADER */
+
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 24px 0;
+      transition: .3s;
+    }
+
+    .header.scrolled {
+      padding: 15px 0;
+      background: rgba(250,249,247,.94);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(44,51,46,.06);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg,var(--sage-400),var(--sage-600));
+      color: white;
+      display: grid;
+      place-items: center;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 35px;
+    }
+
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--ink-light);
+    }
+
+    .nav-links a:hover {
+      color: var(--sage-600);
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 14px 30px;
+      border-radius: var(--radius-full);
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      transition: .3s;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--sage-600);
+      color: white;
+      box-shadow: 0 4px 20px rgba(92,133,112,.2);
+    }
+
+    .btn-primary:hover {
+      background: var(--sage-700);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(44,51,46,.15);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--sage-500);
+      color: var(--sage-600);
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: none;
+      cursor: pointer;
+    }
+
+    .menu-btn span {
+      display: block;
+      width: 23px;
+      height: 2px;
+      background: var(--ink);
+      margin: 5px;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(
+        135deg,
+        var(--sage-50),
+        var(--blush-50) 50%,
+        var(--warm-white)
+      );
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      width: 100%;
+      margin: auto;
+      padding: 110px 32px 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      padding: 8px 18px;
+      border-radius: var(--radius-full);
+      background: rgba(92,133,112,.08);
+      color: var(--sage-600);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .hero h1 {
+      font-size: 68px;
+      font-weight: 300;
+      line-height: 1.05;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 em {
+      color: var(--sage-600);
+    }
+
+    .hero p {
+      max-width: 500px;
+      color: var(--ink-light);
+      font-size: 17px;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .hero-image {
+      height: 600px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 25px 80px rgba(44,51,46,.12);
+      position: relative;
+    }
+
+    .hero-image img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-badge {
+      position: absolute;
+      bottom: 28px;
+      left: 28px;
+      background: rgba(255,255,255,.94);
+      padding: 18px 25px;
+      border-radius: var(--radius-md);
+    }
+
+    .hero-badge span {
+      display: block;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--ink-muted);
+    }
+
+    .hero-badge strong {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 23px;
+    }
+
+    /* GENERAL */
+
+    .section {
+      padding: 110px 0;
+    }
+
+    .section-header {
+      max-width: 680px;
+      margin: 0 auto 65px;
+      text-align: center;
+      padding: 0 25px;
+    }
+
+    .section-label {
+      display: block;
+      color: var(--sage-500);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: 50px;
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .section-subtitle {
+      color: var(--ink-light);
+      font-size: 16px;
+    }
+
+    /* SERVICES */
+
+    .services-grid {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 32px;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 28px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 42px 34px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(44,51,46,.06);
+      transition: .3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 20px 60px rgba(44,51,46,.08);
+    }
+
+    .service-icon {
+      width: 55px;
+      height: 55px;
+      display: grid;
+      place-items: center;
+      background: var(--sage-50);
+      border-radius: var(--radius-sm);
+      font-size: 23px;
+      margin-bottom: 24px;
+    }
+
+    .service-card h3 {
+      font-size: 29px;
+      margin-bottom: 14px;
+    }
+
+    .service-card p {
+      color: var(--ink-light);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .service-type {
+      display: inline-block;
+      background: var(--sage-50);
+      color: var(--sage-600);
+      border-radius: var(--radius-full);
+      padding: 6px 12px;
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    /* CONDITIONS */
+
+    .conditions {
+      background: var(--cream);
+    }
+
+    .conditions-grid {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 32px;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 18px;
+    }
+
+    .condition-card {
+      background: rgba(255,255,255,.7);
+      padding: 28px 24px;
+      border-radius: var(--radius-md);
+      transition: .3s;
+    }
+
+    .condition-card:hover {
+      background: white;
+      transform: translateY(-4px);
+    }
+
+    .condition-card span {
+      color: var(--sage-400);
+      font-family: 'Cormorant Garamond',serif;
+      font-size: 18px;
+    }
+
+    .condition-card h3 {
+      font-size: 23px;
+      margin: 8px 0;
+    }
+
+    .condition-card p {
+      color: var(--ink-light);
+      font-size: 13px;
+    }
+
+    /* HOW */
+
+    .how {
+      background: white;
+    }
+
+    .steps {
+      max-width: 1000px;
+      margin: auto;
+      padding: 0 32px;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 30px;
+    }
+
+    .step {
+      text-align: center;
+    }
+
+    .step-number {
+      width: 55px;
+      height: 55px;
+      margin: auto auto 18px;
+      border-radius: 50%;
+      background: var(--sage-50);
+      color: var(--sage-600);
+      display: grid;
+      place-items: center;
+      font-family: 'Cormorant Garamond',serif;
+      font-size: 22px;
+    }
+
+    .step h3 {
+      font-size: 23px;
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: var(--ink-light);
+      font-size: 13px;
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: linear-gradient(to bottom,var(--warm-white),var(--cream));
+    }
+
+    .about-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 32px;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 90px;
+      align-items: center;
+    }
+
+    .about-images {
+      height: 550px;
+      position: relative;
+    }
+
+    .about-img-main {
+      width: 85%;
+      height: 440px;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+    }
+
+    .about-img-accent {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 48%;
+      height: 240px;
+      object-fit: cover;
+      border: 8px solid var(--warm-white);
+      border-radius: var(--radius-md);
+    }
+
+    .about-content .section-label,
+    .about-content .section-title {
+      text-align: left;
+    }
+
+    .about-content p {
+      color: var(--ink-light);
+      margin-bottom: 18px;
+    }
+
+    .highlight {
+      margin-top: 28px;
+      padding: 20px 24px;
+      border-left: 3px solid var(--sage-400);
+      background: rgba(255,255,255,.6);
+    }
+
+    .highlight strong {
+      display: block;
+      font-family: 'Cormorant Garamond',serif;
+      font-size: 21px;
+      margin-bottom: 4px;
+    }
+
+    .highlight span {
+      font-size: 13px;
+      color: var(--ink-light);
+    }
+
+    /* STRENGTH */
+
+    .strength {
+      background: var(--sage-800);
+      color: white;
+    }
+
+    .strength-container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .strength .section-label {
+      color: var(--sage-300);
+    }
+
+    .strength h2 {
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .strength p {
+      color: rgba(255,255,255,.72);
+      font-size: 15px;
+    }
+
+    .frequencies {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 25px 0;
+    }
+
+    .frequency {
+      padding: 9px 16px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: var(--radius-full);
+      font-size: 12px;
+    }
+
+    .strength-image {
+      height: 450px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .strength-image img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* CTA */
+
+    .cta {
+      padding: 100px 25px;
+      text-align: center;
+      background: linear-gradient(135deg,var(--blush-100),var(--sage-100));
+    }
+
+    .cta-content {
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .cta h2 {
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .cta p {
+      color: var(--ink-light);
+      margin-bottom: 30px;
+    }
+
+    /* FOOTER */
+
+    .footer {
+      background: var(--ink);
+      color: rgba(255,255,255,.65);
+      padding: 70px 0 30px;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 32px;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 45px;
+    }
+
+    .footer-brand {
+      font-family: 'Cormorant Garamond',serif;
+      font-size: 28px;
+      color: white;
+      display: block;
+      margin-bottom: 15px;
+    }
+
+    .footer p,
+    .footer a {
+      font-size: 13px;
+    }
+
+    .footer h4 {
+      color: white;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      margin-bottom: 18px;
+    }
+
+    .footer ul {
+      list-style: none;
+    }
+
+    .footer li {
+      margin-bottom: 9px;
+    }
+
+    .footer a:hover {
+      color: var(--sage-300);
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 50px auto 0;
+      padding: 20px 32px 0;
+      border-top: 1px solid rgba(255,255,255,.08);
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: rgba(255,255,255,.4);
+    }
+
+    /* MOBILE */
+
+    @media(max-width: 950px) {
+
+      .nav-links,
+      .header > .nav-container > .btn {
+        display: none;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .hero-container,
+      .about-container,
+      .strength-container {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 52px;
+      }
+
+      .hero-image {
+        height: 450px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .conditions-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .steps {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media(max-width: 600px) {
+
+      .nav-container,
+      .hero-container,
+      .services-grid,
+      .conditions-grid,
+      .steps,
+      .about-container,
+      .strength-container,
+      .footer-container {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .hero h1 {
+        font-size: 39px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero-image {
+        height: 380px;
+      }
+
+      .section {
+        padding: 75px 0;
+      }
+
+      .section-title {
+        font-size: 37px;
+      }
+
+      .conditions-grid,
+      .steps,
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+
+      .about-images {
+        height: 400px;
+      }
+
+      .about-img-main {
+        height: 310px;
+      }
+
+      .about-img-accent {
+        height: 180px;
+      }
+
+      .strength h2,
+      .cta h2 {
+        font-size: 38px;
+      }
+
+      .strength-image {
+        height: 330px;
+      }
+
+      .footer-bottom {
+        margin-left: 20px;
+        margin-right: 20px;
+        padding-left: 0;
+        padding-right: 0;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header class="header" id="header">
+    <div class="nav-container">
+
+      <a href="#inicio" class="brand">
+        <span class="brand-icon">✦</span>
+        Clínica Aura
+      </a>
+
+      <nav class="nav-links">
+        <a href="#inicio">Início</a>
+        <a href="#servicos">Tratamentos</a>
+        <a href="#condicoes">O que tratamos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+      <a
+        class="btn btn-primary"
+        href="https://wa.me/5541999797791"
+        target="_blank">
+        Agendar atendimento
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero" id="inicio">
+
+    <div class="hero-container">
+
+      <div>
+
+        <span class="hero-tag">
+          Fisioterapia & Osteopatia
+        </span>
+
+        <h1>
+          Cuidado que <em>acolhe</em>,<br>
+          movimento que <em>restaura</em>
+        </h1>
+
+        <p>
+          Atendimento individualizado para aliviar dores,
+          recuperar movimentos, melhorar a força e ajudar você
+          a retomar suas atividades com mais segurança.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a
+            href="https://wa.me/5541999797791"
+            target="_blank"
+            class="btn btn-primary">
+            Quero agendar
+          </a>
+
+          <a href="#condicoes" class="btn btn-outline">
+            Veja o que tratamos
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="hero-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&h=1000&fit=crop&q=80"
+          alt="Ambiente de atendimento">
+
+        <div class="hero-badge">
+          <span>Atendimento</span>
+          <strong>Individualizado</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SERVIÇOS -->
+
+  <section class="section" id="servicos">
+
+    <div class="section-header">
+
+      <span class="section-label">
+        Nossos tratamentos
+      </span>
+
+      <h2 class="section-title">
+        Cuidado de acordo com a sua necessidade
+      </h2>
+
+      <p class="section-subtitle">
+        Cada atendimento é realizado de forma individual,
+        considerando suas necessidades e objetivos.
+      </p>
+
+    </div>
+
+
+    <div class="services-grid">
+
+      <div class="service-card">
+
+        <div class="service-icon">🌿</div>
+
+        <h3>Fisioterapia</h3>
+
+        <p>
+          Atendimento individualizado para recuperação do movimento,
+          tratamento de dores, lesões, pós-operatórios e limitações
+          funcionais.
+        </p>
+
+        <span class="service-type">
+          Sessão avulsa
+        </span>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <div class="service-icon">✋</div>
+
+        <h3>Osteopatia</h3>
+
+        <p>
+          Atendimento individual com abordagem manual, buscando
+          compreender as relações entre as diferentes estruturas
+          do corpo e suas funções.
+        </p>
+
+        <span class="service-type">
+          Sessão avulsa
+        </span>
+
+      </div>
+
+
+      <div class="service-card">
+
+        <div class="service-icon">💪</div>
+
+        <h3>Fortalecimento Muscular</h3>
+
+        <p>
+          Programa acompanhado de forma individualizada para ganho
+          de força, estabilidade, condicionamento e melhora da
+          capacidade funcional.
+        </p>
+
+        <span class="service-type">
+          Plano mensal
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- O QUE TRATAMOS -->
+
+  <section class="section conditions" id="condicoes">
+
+    <div class="section-header">
+
+      <span class="section-label">
+        Podemos ajudar
+      </span>
+
+      <h2 class="section-title">
+        Você se identifica com alguma dessas situações?
+      </h2>
+
+      <p class="section-subtitle">
+        A fisioterapia pode fazer parte da recuperação em diferentes
+        momentos da vida.
+      </p>
+
+    </div>
+
+
+    <div class="conditions-grid">
+
+      <div class="condition-card">
+        <span>01</span>
+        <h3>Dores nas costas</h3>
+        <p>
+          Dores lombares, desconfortos na coluna e limitações
+          para atividades do dia a dia.
+        </p>
+      </div>
+
+      <div class="condition-card">
+        <span>02</span>
+        <h3>Dor no pescoço</h3>
+        <p>
+          Desconfortos cervicais, tensão e dificuldade de movimento.
+        </p>
+      </div>
+
+      <div class="condition-card">
+        <span>03</span>
+        <h3>Dor no ombro</h3>
+        <p>
+          Dores e limitações para movimentar o braço ou realizar
+          atividades cotidianas.
+        </p>
+      </div>
+
+      <div class="condition-card">
+        <span>04</span>
+        <h3>Dor no joelho</h3>
+        <p>
+          Recuperação funcional, fortalecimento e melhora da
+          capacidade de movimento.
+        </p>
+      </div>
+
+      <div class="condition-card">
+        <span>05</span>
+        <h3>Pós-operatório</h3>
+        <p>
+          Acompanhamento fisioterapêutico durante o processo
+          de recuperação após cirurgia.
+        </p>
+      </div>
+
+      <div class="condition-card">
+        <span>06</span>
+        <h3>Reabilitação após AVC</h3>
+        <p>
+          Trabalho voltado à recuperação funcional, mobilidade,
+          força e independência.
+        </p>
+      </div>
+
+      <div class="condition-card">
+        <span>07</span>
+        <h3>Atendimento para idosos</h3>
+        <p>
+          Exercícios e acompanhamento para força, equilíbrio,
+          mobilidade e funcionalidade.
+        </p>
+      </div>
+
+      <div class="condition-card">
+        <span>08</span>
+        <h3>Lesões e perda de força</h3>
+        <p>
+          Acompanhamento para recuperação e retorno gradual
+          às atividades.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- COMO FUNCIONA -->
+
+  <section class="section how">
+
+    <div class="section-header">
+
+      <span class="section-label">
+        Como funciona
+      </span>
+
+      <h2 class="section-title">
+        Um atendimento pensado para você
+      </h2>
+
+      <p class="section-subtitle">
+        O tratamento começa entendendo o que você está sentindo
+        e quais são seus objetivos.
+      </p>
+
+    </div>
+
+
+    <div class="steps">
+
+      <div class="step">
+        <div class="step-number">01</div>
+        <h3>Avaliação</h3>
+        <p>
+          Entendemos suas queixas, histórico e limitações.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">02</div>
+        <h3>Planejamento</h3>
+        <p>
+          Definimos a abordagem mais adequada para seu caso.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">03</div>
+        <h3>Tratamento</h3>
+        <p>
+          Você recebe acompanhamento individual durante as sessões.
+        </p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">04</div>
+        <h3>Acompanhamento</h3>
+        <p>
+          O tratamento é acompanhado de acordo com sua evolução.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SOBRE -->
+
+  <section class="section about" id="sobre">
+
+    <div class="about-container">
+
+      <div class="about-images">
+
+        <img
+          class="about-img-main"
+          src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=800&fit=crop&q=80"
+          alt="Profissional realizando atendimento">
+
+        <img
+          class="about-img-accent"
+          src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=500&fit=crop&q=80"
+          alt="Exercício durante atendimento">
+
+      </div>
+
+
+      <div class="about-content">
+
+        <span class="section-label">
+          Sobre a Clínica Aura
+        </span>
+
+        <h2 class="section-title">
+          Um espaço para cuidar do seu movimento
+        </h2>
+
+        <p>
+          Na Clínica Aura, cada paciente é acompanhado de forma
+          individualizada, considerando suas necessidades,
+          limitações e objetivos.
+        </p>
+
+        <p>
+          Nosso propósito é oferecer um ambiente acolhedor e um
+          atendimento próximo, unindo conhecimento técnico,
+          avaliação individual e acompanhamento durante o processo
+          de recuperação.
+        </p>
+
+        <div class="highlight">
+
+          <strong>
+            Cada pessoa precisa de um cuidado diferente.
+          </strong>
+
+          <span>
+            Por isso, o atendimento é pensado de acordo com
+            as características e necessidades de cada paciente.
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FORTALECIMENTO -->
+
+  <section class="section strength">
+
+    <div class="strength-container">
+
+      <div>
+
+        <span class="section-label">
+          Fortalecimento Muscular
+        </span>
+
+        <h2>
+          Mais força para sua rotina
+        </h2>
+
+        <p>
+          Um programa acompanhado individualmente para quem busca
+          melhorar força, estabilidade, condicionamento e capacidade
+          funcional.
+        </p>
+
+        <div class="frequencies">
+          <span class="frequency">1x por semana</span>
+          <span class="frequency">2x por semana</span>
+          <span class="frequency">3x por semana</span>
+        </div>
+
+        <p>
+          O fortalecimento funciona através de um plano mensal,
+          com frequência definida de acordo com sua necessidade
+          e disponibilidade.
+        </p>
+
+      </div>
+
+
+      <div class="strength-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=900&h=700&fit=crop&q=80"
+          alt="Fortalecimento muscular">
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+
+  <section class="cta" id="contato">
+
+    <div class="cta-content">
+
+      <h2>
+        Está sentindo dor ou precisa recuperar seus movimentos?
+      </h2>
+
+      <p>
+        Entre em contato com a Clínica Aura e converse conosco
+        para saber qual atendimento pode ser adequado para você.
+      </p>
+
+      <a
+        href="https://wa.me/5541999797791"
+        target="_blank"
+        class="btn btn-primary">
+        Agendar pelo WhatsApp
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+
+    <div class="footer-container">
+
+      <div>
+        <span class="footer-brand">
+          Clínica Aura
+        </span>
+
+        <p>
+          Fisioterapia, Osteopatia e Fortalecimento Muscular
+          com atendimento individualizado.
+        </p>
+      </div>
+
+      <div>
+        <h4>Tratamentos</h4>
+
+        <ul>
+          <li><a href="#servicos">Fisioterapia</a></li>
+          <li><a href="#servicos">Osteopatia</a></li>
+          <li><a href="#servicos">Fortalecimento Muscular</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Clínica</h4>
+
+        <ul>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#condicoes">O que tratamos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contato</h4>
+
+        <ul>
+          <li>
+            <a href="https://wa.me/5541999797791" target="_blank">
+              WhatsApp
+            </a>
+          </li>
+
+          <li>
+            <a href="mailto:clinicaaura.saude@gmail.com">
+              clinicaaura.saude@gmail.com
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.instagram.com/clinicaaura.fisioterapia/" target="_blank">
+              Instagram
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.google.com/maps/place/Clinica+Aura+Fisioterapia+e+Osteopatia/@-25.4350748,-49.2437217,17z/data=!3m1!4b1!4m6!3m5!1s0x94dce58c6ed1b4b7:0xda06b9f1f3175b59!8m2!3d-25.4350748!4d-49.2437217!16s%2Fg%2F11zgw8pnkj?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+              Localização
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+        © 2026 Clínica Aura. Todos os direitos reservados.
+      </span>
+
+      <span>
+        Fisioterapia • Osteopatia • Fortalecimento Muscular
+      </span>
+
+    </div>
+
+  </footer>
+
+
+  <script>
+
+    /* Header */
+
+    window.addEventListener('scroll', () => {
+
+      const header = document.getElementById('header');
+
+      header.classList.toggle(
+        'scrolled',
+        window.scrollY > 50
+      );
+
+    });
+
+
+    /* Mobile menu */
+
+    const menuBtn = document.getElementById('menuBtn');
+
+    menuBtn.addEventListener('click', () => {
+
+      alert('Menu mobile pode ser conectado aqui.');
+
+    });
+
+  </script>
+
+</body>
+</html>
