@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Clínica Aura — Fisioterapia e Osteopatia em Curitiba</title>
-<meta name="description" content="Fisioterapia, osteopatia e fortalecimento muscular em Curitiba, com atendimento individual. Agende pelo WhatsApp.">
+<meta name="description" content="Fisioterapia, osteopatia e fortalecimento muscular em Curitiba, com atendimento personalizado. Agende pelo WhatsApp.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
@@ -105,6 +105,23 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   .header{position:sticky}
   section{padding:64px 0}
 }
+.forca{background:var(--deep);color:var(--white)}
+.forca .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.forca h2{font-size:clamp(32px,4.5vw,48px);margin-bottom:16px}
+.forca p{color:#c9dcd8;margin-bottom:16px;max-width:520px}
+.forca ul{list-style:none;margin:22px 0 0}
+.forca li{padding:10px 0 10px 30px;position:relative;color:#e3efec}
+.forca li::before{content:'';position:absolute;left:0;top:19px;width:14px;height:3px;background:var(--amber);border-radius:2px}
+.plans{background:var(--white);color:var(--ink);border-radius:20px;padding:32px;box-shadow:0 24px 60px rgba(0,0,0,.3)}
+.plans h3{font-size:26px;color:var(--deep);margin-bottom:6px}
+.plans>p{color:var(--soft);font-size:15px;margin-bottom:20px}
+.plan{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 20px;border:1.5px solid var(--line);border-radius:12px;margin-bottom:12px;background:var(--mist);transition:.15s}
+.plan:hover{border-color:var(--deep);background:#e6f0ed}
+.plan b{font-family:'Bricolage Grotesque',sans-serif;font-size:24px;color:var(--deep);font-weight:700}
+.plan span{font-size:14px;color:var(--soft)}
+.plan em{font-style:normal;font-weight:600;font-size:14px;color:var(--deep);white-space:nowrap}
+.plans small{display:block;margin-top:8px;color:var(--soft);font-size:13px}
+@media(max-width:900px){.forca .wrap{grid-template-columns:1fr;gap:40px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -116,6 +133,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <button class="burger" id="burger" aria-expanded="false" aria-controls="nav">Menu</button>
     <nav class="nav" id="nav">
       <a href="#tratamentos">Tratamentos</a>
+      <a href="#fortalecimento">Fortalecimento</a>
       <a href="#atendemos">Quem atendemos</a>
       <a href="#como">Como funciona</a>
       <a href="#contato">Contato</a>
@@ -129,7 +147,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <div class="wrap">
     <div>
       <h1>Volte a se mexer <span>sem dor.</span></h1>
-      <p class="lead">Fisioterapia, osteopatia e fortalecimento muscular em Curitiba. Cada sessão é individual, com um plano feito para o seu caso.</p>
+      <p class="lead">Fisioterapia, osteopatia e fortalecimento muscular em Curitiba. O atendimento é personalizado, com um plano feito para o seu caso.</p>
     </div>
     <div class="finder">
       <h2>Onde você sente dor?</h2>
@@ -169,9 +187,33 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       </div>
       <div class="row">
         <h3>Fortalecimento muscular</h3>
-        <p>Acompanhamento individual para ganhar força, estabilidade e condicionamento. Você escolhe 1, 2 ou 3 sessões por semana.</p>
+        <p>Treino personalizado, em turmas de até 2 alunos por horário, para ganhar força, estabilidade e condicionamento. Você escolhe 1, 2 ou 3 sessões por semana.</p>
         <span class="tag">Plano mensal</span>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="fortalecimento" class="forca">
+  <div class="wrap">
+    <div>
+      <h2>Fortalecimento muscular com acompanhamento</h2>
+      <p>Um treino personalizado para quem quer mais força e segurança no dia a dia, seja depois de uma lesão, na reabilitação ou para se manter ativo com o passar dos anos. Atendemos todos os públicos, inclusive idosos.</p>
+      <p>Funciona em plano mensal, e a frequência é definida de acordo com a sua necessidade e a sua disponibilidade.</p>
+      <ul>
+        <li>Mais força e estabilidade</li>
+        <li>Melhor condicionamento</li>
+        <li>Mais capacidade para as atividades do dia a dia</li>
+        <li>No máximo 2 alunos por horário, com atenção próxima</li>
+      </ul>
+    </div>
+    <div class="plans">
+      <h3>Escolha a frequência</h3>
+      <p>Toque em uma opção para conversar com a gente no WhatsApp.</p>
+      <a class="plan" href="#" data-wa="Olá! Tenho interesse no plano de fortalecimento muscular, 1x por semana."><div><b>1x por semana</b><br><span>Plano mensal</span></div><em>Quero saber mais</em></a>
+      <a class="plan" href="#" data-wa="Olá! Tenho interesse no plano de fortalecimento muscular, 2x por semana."><div><b>2x por semana</b><br><span>Plano mensal</span></div><em>Quero saber mais</em></a>
+      <a class="plan" href="#" data-wa="Olá! Tenho interesse no plano de fortalecimento muscular, 3x por semana."><div><b>3x por semana</b><br><span>Plano mensal</span></div><em>Quero saber mais</em></a>
+      <small>Não sabe qual escolher? Conversamos e indicamos o ideal para o seu caso.</small>
     </div>
   </div>
 </section>
@@ -180,7 +222,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <div class="wrap two">
     <div class="head" style="margin:0">
       <h2>Quem a gente atende</h2>
-      <p>A fisioterapia ajuda em vários momentos da vida. Se o seu caso não está na lista, mande uma mensagem e conversamos.</p>
+      <p>Atendemos todos os públicos, inclusive idosos, em vários momentos da vida. Se o seu caso não está na lista, mande uma mensagem e conversamos.</p>
     </div>
     <ul class="list">
       <li>Dores nas costas <span>Lombar, coluna e limitações no dia a dia</span></li>
@@ -202,7 +244,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="steps">
       <div class="step"><b>1</b><h3>Avaliação</h3><p>Ouvimos suas queixas, histórico e limitações.</p></div>
       <div class="step"><b>2</b><h3>Plano</h3><p>Definimos a abordagem certa para o seu caso.</p></div>
-      <div class="step"><b>3</b><h3>Tratamento</h3><p>Sessões individuais, com atenção total a você.</p></div>
+      <div class="step"><b>3</b><h3>Tratamento</h3><p>Atendimento próximo, com atenção total a você.</p></div>
       <div class="step"><b>4</b><h3>Evolução</h3><p>Ajustamos o tratamento conforme você melhora.</p></div>
     </div>
   </div>
